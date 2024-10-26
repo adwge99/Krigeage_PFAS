@@ -28,14 +28,14 @@ df_fr_surf_ground_drink = df_fr_surf_ground_drink[df_fr_surf_ground_drink['year'
 # Uniquement les colonnes utiles au traitement
 df_fr_surf_ground_drink = df_fr_surf_ground_drink[['lat','lon','pfas_sum']]
 
-# # Calculer le 99ème percentile
-# percentile_99 = np.percentile(df_fr_surf_ground_drink.pfas_sum.values, 99)
+# Calculer le 99ème percentile
+percentile_99 = np.percentile(df_fr_surf_ground_drink.pfas_sum.values, 99)
 
-# # Afficher le résultat
-# print(f"Le 99ème percentile des concentrations de PFAS est : {percentile_99}")
+# Afficher le résultat
+print(f"Le 99ème percentile des concentrations de PFAS est : {percentile_99}")
 
-# # On fixe les valeurs extrêmement élevées au 99ème percentile pour la lisibilité
-# df_fr_surf_ground_drink['pfas_sum'] = np.clip(df_fr_surf_ground_drink['pfas_sum'], None, percentile_99)
+# On fixe les valeurs extrêmement élevées au 99ème percentile pour la lisibilité
+df_fr_surf_ground_drink['pfas_sum'] = np.clip(df_fr_surf_ground_drink['pfas_sum'], None, percentile_99)
 
 # Longueur initiale du DataFrame
 initial_length = len(df_fr_surf_ground_drink)
