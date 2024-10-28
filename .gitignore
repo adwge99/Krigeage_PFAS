@@ -1,5 +1,2 @@
-data/*
+data/pdh_data.parquet
 .venv/
-!data/pfas_france_pretraite.parquet
-!data/pfas_2023_surf_ground_drink.parquet
-!data/rr_annuel.parquet
